@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="styles.css"></link>
+
+<head>
+<title>Single Reviews</title>
+</head>
+<header>
+	<h1>Bikes Reviews</h1>
+</header>
+<body>
+	<div class="container">
+	
+		<div th:each="model: ${model}">
+		<h3 th:text="${model.name}"></h3>
+
+			<img class="images" th:src="${model.imageURL}" />
+			<p th:text="${model.review}"></p>
+			<p th:text="${model.ride}"></p>
+
+			<a th:href="@{/bikemakes(id=${makeAsCollection})}">Click to
+				go back to all the Bike Makes</a>
+		</div>
+</div>
+</body>
+<footer> Bike Reviews Copyright 2017</footer> 
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="styles.css"></link>
+<head>
+<title>Bike Models</title>
+</head>
+<header>
+	<h1>Bike Reviews</h1>
+</header>
+<body>
+	<div class="container">
+		<h3>These are make and model of bikes</h3>
+		
+		<ul id="liststyle" th:each="currentRegion:${make}">
+			<li><button class="button"><a th:href="@{/models(id=${currentMake.id})}"
+				th:text="${currentMake.name}"></a></button></li>
+		</ul>
+		</div>
+</body>
+<footer>Bike Reviews Copyright 2017</footer> 
+</html>
