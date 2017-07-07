@@ -18,7 +18,7 @@ public class BikeModel {
 	private String imageURL;
 	
 	@Lob
-	private String taste;
+	private String ride;
 
 	@Lob
 	private String review;
@@ -63,7 +63,7 @@ public class BikeModel {
 		this.name = name;
 		this.imageURL = imageURL;
 		this.review = review;
-		this.taste = taste;
+		this.ride = ride;
 	}
 
 
