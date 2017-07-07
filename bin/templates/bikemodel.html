@@ -10,16 +10,16 @@
 <body>
 	<div class="container">
 		<ul id="liststyle">
-		<h3> These are the best Bike Models: </h3>
+		<h3> These are the Bike Models: </h3>
 			<h2 th:text="${brand.name}"></h2>
-			<li th:each="currentBikeModel:${brand.brand}">
-			<img class="images1" th:src="${currentBikeModel.imageURL}" /> <br>
+			<li th:each="currentBikeModel:${brand.name}">
+			<img class="image" th:src="${currentBikeModel.imageURL}" /> <br>
 				<button class="button">
 					<a th:href="@{/singleReview(id=${currentBikeModel.id})}"
 						th:text="${currentBikeModel.name}"></a>
 				</button> </br></li>
 		</ul>
-		<br> <a th:href="@{/bikebrandss(id=${brandsAsCollection})}">Click
+		<br> <a th:href="@{/bikebrand(id=${brandsAsCollection})}">Click
 			&lt;to&gt; go back to all the Bike Brands</a></br>
 	</div>
 </body>
