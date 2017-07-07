@@ -11,15 +11,15 @@
 <body>
 	<div class="container">
 	
-		<div th:each="model: ${model}">
-		<h3 th:text="${model.name}"></h3>
+		<div th:each="bikemodel: ${bikemodel}">
+		<h3 th:text="${bikemodel.name}"></h3>
 
-			<img class="images" th:src="${model.imageURL}" />
-			<p th:text="${model.review}"></p>
-			<p th:text="${model.ride}"></p>
+			<img class="images" th:src="${bikemodel.imageURL}" />
+			<p th:text="${bikemodel.review}"></p>
+			<p th:text="${bikemodel.ride}"></p>
 
-			<a th:href="@{/bikemakes(id=${makeAsCollection})}">Click to
-				go back to all the Bike Makes</a>
+			<a th:href="@{/bikemakes(id=${brandAsCollection})}">Click to
+				go back to all the Bike Brand</a>
 		</div>
 </div>
 </body>

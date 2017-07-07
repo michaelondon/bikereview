@@ -2,7 +2,6 @@ package bikes;
 
 import javax.annotation.Resource;
 
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,22 +10,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class BikeController {
 	@Resource
-	private MakeRepository makeRepo;
+	private BrandRepository brandRepo;
 
 	@Resource
-	private ModelRepository modelRepo;
+	private BikeModelRepository modelRepo;
 
 	
-	@RequestMapping("/bikemake") //returns all make for bike
-	public String retrieveRegion(Model model) {
-		model.addAttribute("make", makeRepo.findAll());
-		return "makeList";
+	@RequestMapping("/bikebrand") //returns all brand of bikes
+	public String retrieveBrand(Model model) {
+		model.addAttribute("brand", brandRepo.findAll());
+		return "brandList";
 	}
 
-	@RequestMapping("/models") //returns bike from specific make
-	public String retrieveModels(@RequestParam("id") long id, Model model) {
-		model.addAttribute(((CrudRepository<bikes.Model, Long>) makeRepo).findOne(id));
-		return "modelsList";
+	@RequestMapping("/bikemodel") //returns bike joints from specific region
+	public String retrieveBikeModel(@RequestParam("id") long id, Model model) {
+		model.addAttribute(brandRepo.findOne(id));
+		return "bikemodel";
 	}
 
 

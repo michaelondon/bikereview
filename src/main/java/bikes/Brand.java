@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class MakeRepository {
+public class Brand {
 
 	@Id
 	@GeneratedValue
@@ -16,13 +16,12 @@ public class MakeRepository {
 	private String name;
 
 	@OneToMany(mappedBy="make")
-	private Set<Model> bikes;
+	private Set<BikeModel> bike;
 	
-	public Set<Model> getBikes() {
-		return bikes;
+	public Set<BikeModel> getbike() {
+		return bike;
 	}
-	
-	
+		
 	public Long getId() {
 		return id;
 	}
@@ -31,11 +30,11 @@ public class MakeRepository {
 		return name;
 	}
 
-	public MakeRepository(String name) {
+	public Brand (String name) {
 		this.name = name;
 	}
 
-	public MakeRepository() {
+	public Brand() {
 	}
 	
 

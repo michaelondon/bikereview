@@ -9,7 +9,7 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Model {
+public class BikeModel {
 
 	@Id
 	@GeneratedValue
@@ -18,20 +18,20 @@ public class Model {
 	private String imageURL;
 	
 	@Lob
-	private String ride;
+	private String taste;
 
 	@Lob
 	private String review;
 
 	@ManyToOne
-	private Make make;
+	private Brand brand;
 
-	public Make getMake() {
-		return make;
+	public Brand getBrand() {
+		return brand;
 	}
 
-	public void setMakes(Make make) {
-		this.make = make;
+	public void setBrands(Brand brand) {
+		this.brand = brand;
 	}
 
 	public Long getId() {
@@ -42,8 +42,8 @@ public class Model {
 		return imageURL;
 	}
 
-	public String getTaste() {
-		return ride;
+	public String getRide() {
+		return getRide();
 	}
 
 	public String getReview() {
@@ -54,13 +54,16 @@ public class Model {
 		return name;
 	}
 
-	public Model(Make make, Long id, String name, String imageURL, String review, String ride) {
-		this.make = make;
+	private BikeModel() {
+	}
+
+	public BikeModel(Brand brand, Long id, String name, String imageURL, String review, String taste) {
+		this.brand = brand;
 		this.id = id;
 		this.name = name;
 		this.imageURL = imageURL;
 		this.review = review;
-		this.ride = ride;
+		this.taste = taste;
 	}
 
 
