@@ -11,9 +11,9 @@
 	<div class="container">
 		<h3>These are make and model of bikes</h3>
 		
-		<ul id="liststyle" th:each="currentRegion:${make}">
-			<li><button class="button"><a th:href="@{/models(id=${currentMake.id})}"
-				th:text="${currentMake.name}"></a></button></li>
+		<ul id="liststyle" th:each="currentBrand:${brand}">
+			<li><button class="button"><a th:href="@{/bikemodel(id=${currentBrand.id})}"
+				th:text="${currentBrand.name}"></a></button></li>
 		</ul>
 		</div>
 </body>

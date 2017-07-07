@@ -15,7 +15,7 @@ public class Brand {
 	private Long id;
 	private String name;
 
-	@OneToMany(mappedBy="make")
+	@OneToMany(mappedBy="brand")
 	private Set<BikeModel> bike;
 	
 	public Set<BikeModel> getbike() {

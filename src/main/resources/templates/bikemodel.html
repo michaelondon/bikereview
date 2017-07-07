@@ -12,7 +12,7 @@
 		<ul id="liststyle">
 		<h3> These are the best Bike Models: </h3>
 			<h2 th:text="${brand.name}"></h2>
-			<li th:each="currentBikeModel:${brand.tacos}">
+			<li th:each="currentBikeModel:${brand.brand}">
 			<img class="images1" th:src="${currentBikeModel.imageURL}" /> <br>
 				<button class="button">
 					<a th:href="@{/singleReview(id=${currentBikeModel.id})}"

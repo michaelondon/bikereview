@@ -57,7 +57,7 @@ public class BikeModel {
 	private BikeModel() {
 	}
 
-	public BikeModel(Brand brand, Long id, String name, String imageURL, String review, String taste) {
+	public BikeModel(Brand brand, Long id, String name, String imageURL, String review, String ride) {
 		this.brand = brand;
 		this.id = id;
 		this.name = name;

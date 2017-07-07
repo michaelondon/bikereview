@@ -10,13 +10,13 @@
 <body>
 	<div class="container">
 		<h3>Here are the Brands of bikes.
-			located</h3>
+		</h3>
 		<div class="images2container">
-			<img th:src="@{/images/ohioTaco.jpg}" src="/images/ohioTacos.jpg"
+			<img th:src="@{/images/bikereview.jpg}" src="/images/bikereview.jpg"
 				class="images2" alt="bikes" />
 			<ul id="liststyle">
 				<li th:each="currentBrand:${brand}"><button class="button1">
-						<a th:href="@{/bikemodels(id=${currentBrand.id})}"
+						<a th:href="@{/bikemodel(id=${currentBrand.id})}"
 							th:text="${currentBrand.name}"></a>
 					</button></li>
 			</ul>

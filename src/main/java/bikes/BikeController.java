@@ -13,13 +13,13 @@ public class BikeController {
 	private BrandRepository brandRepo;
 
 	@Resource
-	private BikeModelRepository modelRepo;
+	private BikeModelRepository bikemodelRepo;
 
 	
 	@RequestMapping("/bikebrand") //returns all brand of bikes
 	public String retrieveBrand(Model model) {
 		model.addAttribute("brand", brandRepo.findAll());
-		return "brandList";
+		return "bikebrand";
 	}
 
 	@RequestMapping("/bikemodel") //returns bike joints from specific brand
@@ -31,7 +31,7 @@ public class BikeController {
 
 	@RequestMapping("/singleReview") //pulls one review
 	public String retrieveSingleReview(@RequestParam("id") long id, Model model) {
-		model.addAttribute(modelRepo.findOne(id));
+		model.addAttribute(bikemodelRepo.findOne(id));
 		return "singleReview";
 	}
 
