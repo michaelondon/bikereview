@@ -13,26 +13,33 @@ public class BikeController {
 	private BrandRepository brandRepo;
 
 	@Resource
-	private BikeModelRepository bikemodelRepo;
+	private BikeModelRepository modelsRepo;
 
 	
-	@RequestMapping("/bikebrand") //returns all brand of bikes
-	public String retrieveBrand(Model model) {
+	@RequestMapping("/allbikebrands") //returns all brands of bikes
+	public String retrieveBrands(Model model) {
 		model.addAttribute("brand", brandRepo.findAll());
-		return "bikebrand";
+		return "allbikebrands";
 	}
 
-	@RequestMapping("/bikemodel") //returns bike joints from specific brand
-	public String retrieveBikeModel(@RequestParam("id") long id, Model model) {
-		model.addAttribute(brandRepo.findOne(id));
-		return "bikemodel";
-	}
+	@RequestMapping("/modelsforbrand") // should be modelsforbrand
+	public String retrieveBikeModel(Model model) {
+		model.addAttribute("bikeModel", modelsRepo.findAll());
+		return "bikemodelList";}
+	
+
+		
+	@RequestMapping("/bikemodel") // returns bike models from specific brand
+	public String retrieveBikeModels(@RequestParam("id") long id, Model model) {
+		model.addAttribute("bike", brandRepo.findOne(id));
+		return "bike";	}
+
 
 
 	@RequestMapping("/singleReview") //pulls one review
 	public String retrieveSingleReview(@RequestParam("id") long id, Model model) {
-		model.addAttribute(bikemodelRepo.findOne(id));
-		return "singleReview";
+		model.addAttribute("singleReview", modelsRepo.findOne(id)); //singleReview this is a view name
+		return "singleReview"; //this is a returned template name.
 	}
 
 }

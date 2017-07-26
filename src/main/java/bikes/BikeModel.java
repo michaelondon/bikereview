@@ -24,19 +24,12 @@ public class BikeModel {
 	private String review;
 
 	@ManyToOne
-	private Brand brand;
+	private Manufacturer brand;
 
-	public Brand getBrand() {
+	public Manufacturer getBrand() {
 		return brand;
 	}
 
-	public void setBrands(Brand brand) {
-		this.brand = brand;
-	}
-
-	public Long getId() {
-		return id;
-	}
 
 	public String getImageURL() {
 		return imageURL;
@@ -57,14 +50,15 @@ public class BikeModel {
 	private BikeModel() {
 	}
 
-	public BikeModel(Brand brand, Long id, String name, String imageURL, String review, String ride) {
+	public BikeModel(Manufacturer brand, String imageURL, String ride, String name, String review) {
 		this.brand = brand;
-		this.id = id;
-		this.name = name;
 		this.imageURL = imageURL;
-		this.review = review;
 		this.ride = ride;
+		this.name = name;
+		this.review = review;
 	}
+
+	
 
 
 }
